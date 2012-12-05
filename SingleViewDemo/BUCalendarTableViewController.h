@@ -1,5 +1,5 @@
 //
-//  BUViewController.h
+//  BUCalendarTableViewController.h
 //  SingleViewDemo
 //
 //  Created by Niall Kavanagh on 12/5/12.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BUViewController : UIViewController
+@interface BUCalendarTableViewController : UITableViewController
 
-@property (strong, nonatomic) IBOutlet UIWebView *webView;
 @end

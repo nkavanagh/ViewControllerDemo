@@ -23,6 +23,7 @@
 		4788351C166FEFF000191770 /* BUToday@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 47883518166FEFF000191770 /* BUToday@2x.png */; };
 		4788351D166FEFF000191770 /* Calendar_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 47883519166FEFF000191770 /* Calendar_01.png */; };
 		4788351E166FEFF000191770 /* Calendar_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4788351A166FEFF000191770 /* Calendar_01@2x.png */; };
+		47883521166FF8DE00191770 /* BUCalendarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47883520166FF8DE00191770 /* BUCalendarTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		47883518166FEFF000191770 /* BUToday@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BUToday@2x.png"; sourceTree = "<group>"; };
 		47883519166FEFF000191770 /* Calendar_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar_01.png; sourceTree = "<group>"; };
 		4788351A166FEFF000191770 /* Calendar_01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar_01@2x.png"; sourceTree = "<group>"; };
+		4788351F166FF8DE00191770 /* BUCalendarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUCalendarTableViewController.h; sourceTree = "<group>"; };
+		47883520166FF8DE00191770 /* BUCalendarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUCalendarTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				47883500166FE8A700191770 /* BUAppDelegate.h */,
 				47883501166FE8A700191770 /* BUAppDelegate.m */,
 				47883509166FE8A700191770 /* MainStoryboard_iPhone.storyboard */,
+				4788351F166FF8DE00191770 /* BUCalendarTableViewController.h */,
+				47883520166FF8DE00191770 /* BUCalendarTableViewController.m */,
 				4788350C166FE8A700191770 /* MainStoryboard_iPad.storyboard */,
 				4788350F166FE8A700191770 /* BUViewController.h */,
 				47883510166FE8A700191770 /* BUViewController.m */,
@@ -197,6 +202,7 @@
 				478834FE166FE8A700191770 /* main.m in Sources */,
 				47883502166FE8A700191770 /* BUAppDelegate.m in Sources */,
 				47883511166FE8A700191770 /* BUViewController.m in Sources */,
+				47883521166FF8DE00191770 /* BUCalendarTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
