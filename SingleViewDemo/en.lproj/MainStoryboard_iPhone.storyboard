@@ -107,7 +107,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="Rq5-2F-usW" kind="push" id="mKo-ez-FnA"/>
+                                    <segue destination="Rq5-2F-usW" kind="push" identifier="eventDetailSegue" id="mKo-ez-FnA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -315,28 +315,6 @@
         <image name="BUToday.png" width="77" height="77"/>
         <image name="Calendar_01.png" width="77" height="77"/>
     </resources>
-    <classes>
-        <class className="BUCalendarTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BUCalendarTableViewController.h"/>
-        </class>
-        <class className="BUEventDetailTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BUEventDetailTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="emailLabel" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="phoneLabel" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="summaryLabel" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UITableViewCell"/>
-            </relationships>
-        </class>
-        <class className="BUViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BUViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

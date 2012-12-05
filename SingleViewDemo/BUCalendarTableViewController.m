@@ -7,9 +7,11 @@
 //
 
 #import "BUCalendarTableViewController.h"
+#import "BUEventDetailTableViewController.h"
 
 @interface BUCalendarTableViewController () {
     NSArray *_events;
+    NSIndexPath *selectedEvent;
 }
 
 @end
@@ -135,6 +137,17 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    
+    selectedEvent = indexPath;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"eventDetailSegue"]) {
+        NSDictionary *event = [_events objectAtIndex:selectedEvent.row];
+        // Get reference to the destination view controller
+        BUEventDetailTableViewController *vc = (BUEventDetailTableViewController *)[segue destinationViewController];
+        [vc setEventID:[event objectForKey:@"id"]];
+    }
 }
 
 @end
