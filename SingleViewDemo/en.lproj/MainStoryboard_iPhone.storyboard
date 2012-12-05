@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Table View Controller - Boston University-->
         <scene sceneID="6q5-uP-qrA">
             <objects>
                 <tableViewController id="Si1-hd-XLr" sceneMemberID="viewController">
@@ -66,13 +66,15 @@
                             <outlet property="delegate" destination="Si1-hd-XLr" id="tiX-do-EWZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="c6j-ld-ihs"/>
+                    <navigationItem key="navigationItem" title="Boston University" id="c6j-ld-ihs">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="DRq-jz-blv"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IfS-ht-gis" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="585" y="7"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - BU Today-->
         <scene sceneID="Tiv-Wc-1mD">
             <objects>
                 <viewController id="acG-IR-nZg" sceneMemberID="viewController">
@@ -81,7 +83,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </webView>
-                    <navigationItem key="navigationItem" id="62y-qc-Uye"/>
+                    <navigationItem key="navigationItem" title="BU Today" id="62y-qc-Uye"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ou-D9-Dob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
