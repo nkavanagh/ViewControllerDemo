@@ -19,6 +19,10 @@
 		4788350B166FE8A700191770 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47883509166FE8A700191770 /* MainStoryboard_iPhone.storyboard */; };
 		4788350E166FE8A700191770 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4788350C166FE8A700191770 /* MainStoryboard_iPad.storyboard */; };
 		47883511166FE8A700191770 /* BUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47883510166FE8A700191770 /* BUViewController.m */; };
+		4788351B166FEFF000191770 /* BUToday.png in Resources */ = {isa = PBXBuildFile; fileRef = 47883517166FEFF000191770 /* BUToday.png */; };
+		4788351C166FEFF000191770 /* BUToday@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 47883518166FEFF000191770 /* BUToday@2x.png */; };
+		4788351D166FEFF000191770 /* Calendar_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 47883519166FEFF000191770 /* Calendar_01.png */; };
+		4788351E166FEFF000191770 /* Calendar_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4788351A166FEFF000191770 /* Calendar_01@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		4788350D166FE8A700191770 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		4788350F166FE8A700191770 /* BUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BUViewController.h; sourceTree = "<group>"; };
 		47883510166FE8A700191770 /* BUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BUViewController.m; sourceTree = "<group>"; };
+		47883517166FEFF000191770 /* BUToday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BUToday.png; sourceTree = "<group>"; };
+		47883518166FEFF000191770 /* BUToday@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BUToday@2x.png"; sourceTree = "<group>"; };
+		47883519166FEFF000191770 /* Calendar_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar_01.png; sourceTree = "<group>"; };
+		4788351A166FEFF000191770 /* Calendar_01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar_01@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,10 @@
 		478834F7166FE8A700191770 /* SingleViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				47883517166FEFF000191770 /* BUToday.png */,
+				47883518166FEFF000191770 /* BUToday@2x.png */,
+				47883519166FEFF000191770 /* Calendar_01.png */,
+				4788351A166FEFF000191770 /* Calendar_01@2x.png */,
 				47883500166FE8A700191770 /* BUAppDelegate.h */,
 				47883501166FE8A700191770 /* BUAppDelegate.m */,
 				47883509166FE8A700191770 /* MainStoryboard_iPhone.storyboard */,
@@ -168,6 +180,10 @@
 				47883508166FE8A700191770 /* Default-568h@2x.png in Resources */,
 				4788350B166FE8A700191770 /* MainStoryboard_iPhone.storyboard in Resources */,
 				4788350E166FE8A700191770 /* MainStoryboard_iPad.storyboard in Resources */,
+				4788351B166FEFF000191770 /* BUToday.png in Resources */,
+				4788351C166FEFF000191770 /* BUToday@2x.png in Resources */,
+				4788351D166FEFF000191770 /* Calendar_01.png in Resources */,
+				4788351E166FEFF000191770 /* Calendar_01@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
