@@ -41,7 +41,41 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    NSLog(@"My event id is %@", eventID);
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSString *uri = [NSString stringWithFormat:@"http://www.bu.edu/bumobile/rpc/calendar/events.json.php?eid=%@", eventID];
+    NSLog(@"Loading %@", uri);
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:uri]];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (error) {
+            NSLog(@"There was a problem fetching the event: %@", error);
+        } else if (data) {
+            NSDictionary *decodedResponse = [NSJSONSerialization JSONObjectWithData:data
+                                                                            options:NSJSONReadingMutableContainers
+                                                                              error:nil];
+            
+            NSDictionary *resultSet = [decodedResponse objectForKey:@"ResultSet"];
+            
+            NSDictionary *event = [resultSet[@"Result"] firstObject];
+            
+            NSLog(@"event: %@", event);
+            summaryLabel.text = event[@"summary"];
+            timeLabel.text = [NSString stringWithFormat:@"%@; %@", event[@"displayTime"], event[@"displayDate"]];
+            descriptionLabel.text = event[@"description"];
+            locationLabel.text = event[@"location"];
+            phoneLabel.text = event[@"phone"];
+            emailLabel.text = event[@"contactEmail"];
+            [self.tableView reloadData];
+            
+        } else {
+            NSLog(@"There was no event data!");
+        }
+    }];
+
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

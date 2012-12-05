@@ -106,9 +106,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="Rq5-2F-usW" kind="push" identifier="eventDetailSegue" id="mKo-ez-FnA"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -117,6 +114,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Calendar" id="ncM-oN-zIw"/>
+                    <connections>
+                        <segue destination="Rq5-2F-usW" kind="push" identifier="eventDetailSegue" id="rnS-mE-jBS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yH7-ES-urv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -176,7 +176,7 @@
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeW-Dw-sKo">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Description" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="IeW-Dw-sKo">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -262,12 +262,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Event" id="5RB-f0-K4e"/>
                     <connections>
-                        <outlet property="descriptionLabel" destination="pZ2-os-Fza" id="XdV-nH-Ntf"/>
-                        <outlet property="emailLabel" destination="6jb-LL-3Sp" id="Apr-Wa-ZTe"/>
+                        <outlet property="descriptionLabel" destination="IeW-Dw-sKo" id="JW5-HW-d5z"/>
+                        <outlet property="emailLabel" destination="aA2-x8-HfI" id="3YT-bB-dGM"/>
                         <outlet property="locationLabel" destination="VPL-VE-z7K" id="51m-4s-TaQ"/>
-                        <outlet property="phoneLabel" destination="Y63-eA-F4f" id="b2S-wy-CLF"/>
-                        <outlet property="summaryLabel" destination="owt-NG-Ju7" id="nhX-Mi-XSh"/>
-                        <outlet property="timeLabel" destination="Dxz-ny-fSt" id="AoZ-eH-FTp"/>
+                        <outlet property="phoneLabel" destination="q59-QT-hfn" id="Bc9-DF-h9w"/>
+                        <outlet property="summaryLabel" destination="mnA-dO-mb8" id="kpa-zI-TSy"/>
+                        <outlet property="timeLabel" destination="IvA-IA-dyI" id="ruu-Jm-X2p"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRu-2O-3nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -315,6 +315,28 @@
         <image name="BUToday.png" width="77" height="77"/>
         <image name="Calendar_01.png" width="77" height="77"/>
     </resources>
+    <classes>
+        <class className="BUCalendarTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BUCalendarTableViewController.h"/>
+        </class>
+        <class className="BUEventDetailTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BUEventDetailTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="phoneLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="summaryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BUViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BUViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
