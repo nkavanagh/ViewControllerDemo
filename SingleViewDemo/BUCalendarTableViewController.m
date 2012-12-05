@@ -8,7 +8,9 @@
 
 #import "BUCalendarTableViewController.h"
 
-@interface BUCalendarTableViewController ()
+@interface BUCalendarTableViewController () {
+    NSArray *_events;
+}
 
 @end
 
@@ -27,11 +29,25 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.bu.edu/bumobile/rpc/calendar/events.json.php?tid=51"]];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (error) {
+            NSLog(@"There was a problem fetching the events: %@", error);
+        } else if (data) {
+            NSDictionary *decodedResponse = [NSJSONSerialization JSONObjectWithData:data
+                                                                            options:NSJSONReadingMutableContainers
+                                                                              error:nil];
+            
+            NSDictionary *resultSet = [decodedResponse objectForKey:@"ResultSet"];
+            
+            _events = [resultSet objectForKey:@"Result"];
+            NSLog(@"Downloaded %d events: %@", [_events count], _events);
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"There were no events!");
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,24 +60,27 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [_events count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"EventCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
     // Configure the cell...
+    
+    NSDictionary *event = [_events objectAtIndex:indexPath.row];
+    cell.textLabel.text = [event objectForKey:@"summary"];
+    cell.detailTextLabel.text = [event objectForKey:@"time"];
     
     return cell;
 }
