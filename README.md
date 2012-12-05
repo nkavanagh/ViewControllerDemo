@@ -1,16 +1,3 @@
-# Introduction
-
-I'm certain there are people who just get this stuff right out of the gate. There might be some of those people here tonight. I'm not one of them. It's like a sport; you must drill, you must develop muscle memory. I spend most of my day cursing my computer, wondering why it hates me.
-
-I'll follow up with some links to other good tutorials. You can also grab the demo code I'll show you today from:
-
-https://github.com/bu-ist/ViewControllerDemo
-
-# Demo the app
-
-Show what we'll be building. Explain terminology.
-
-If your views are cards, think of UINavigationController as a dealer.
 
 # Building the app
 
